@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int T,l;
+    cin>>T;
+    for(l=0;l<T;l++)
+    {
+        int j,k,n,i,pos=0;
+        cin>>n;
+        int arr[n],music;
+        for(i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        cin>>k;
+        music=arr[k-1];
+        j=sizeof(arr)/sizeof(arr[0]);
+        sort(arr,arr+j);
+        for(i=0;i<n;i++)
+        {
+            if(arr[i]==music)
+            {
+                pos=i+1;
+                break;
+            }
+        }
+        cout<<pos;
+        cout<<"\n";
+    }
+    return 0;
+}
