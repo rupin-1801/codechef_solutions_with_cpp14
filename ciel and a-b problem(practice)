@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i,a,b;
+    cin>>a>>b;
+    i=abs(a-b);
+    if(i%10==9) cout<<--i;
+    else cout<<++i;
+    return 0;
+}
