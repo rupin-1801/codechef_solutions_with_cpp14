@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+unsigned int check(unsigned int m){
+    unsigned int count = 0;
+    for (;m > 0;m = m >> 1){
+        if (m % 2 == 1){
+            count ++;
+        }
+    }
+    return count;
+}
+int main() {
+    int t,m,j,i;
+    unsigned int n,p,q,even,odd,a[100000];
+    scanf("%d",&t);
+    for (; m < t ; m++){
+        scanf("%d%d",&n,&q);
+        for (i = 0 ; i < n ; i++){
+            scanf("%d",&a[i]);
+        }
+        even = odd = 0;
+        for (j = 0 ; j < n; j++){
+            if (check(a[j])% 2 == 0){
+                even ++;
+            }
+            else{
+                odd ++;
+            }
+        }
+        for (i = 0 ; i < q ; i++){
+            scanf("%d",&p);
+            if(check(p)%2 == 0)
+                printf("%d %d\n",even,odd);
+            else
+                printf("%d %d\n",odd,even);
+        }
+    }
+}
+
